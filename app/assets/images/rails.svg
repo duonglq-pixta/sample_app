@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <path fill="#CC0000" d="M 100,100 L 900,100 L 900,900 L 100,900 Z"/>
+  <path fill="#FFFFFF" d="M 200,200 L 800,200 L 800,800 L 200,800 Z"/>
+  <path fill="#CC0000" d="M 300,300 L 700,300 L 700,700 L 300,700 Z"/>
+  <text x="500" y="550" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="120" font-weight="bold">R</text>
+</svg>
