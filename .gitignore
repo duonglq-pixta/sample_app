@@ -32,3 +32,8 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore PDF file
+Ruby on Rails Tutorial_ Learn Web Development with Rails, 7th Edition.pdf
+
+.DS_Store
