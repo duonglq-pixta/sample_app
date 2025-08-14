@@ -37,6 +37,9 @@ en:
         success: "Welcome to the Sample App!"
       show:
         error: "User not found"
+    sessions:
+      create:
+        error: "Invalid email/password combination"
   
   # Static pages
   static_pages:
@@ -56,6 +59,15 @@ en:
     show:
       title: "Profile"
   
+  # Sessions
+  sessions:
+    new:
+      title: "Log in"
+      remember_me: "Remember me"
+      new_user_prompt: "New user?"
+      signup_link: "Sign up now!"
+      submit: "Log in"
+  
   # Navigation
   navigation:
     home: "Home"
@@ -63,6 +75,23 @@ en:
     users: "Users"
     about: "About"
     signup: "Sign up"
+    login: "Log in"
+    logout: "Log out"
+  
+  # Form labels
+  forms:
+    labels:
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Confirmation"
+      remember_me: "Remember me"
+  
+  # Form buttons
+  forms:
+    buttons:
+      create_account: "Create my account"
+      login: "Log in"
   
   # Error messages
   errors:
