@@ -29,3 +29,48 @@
 
 en:
   hello: "Hello world"
+  
+  # Flash messages
+  flash:
+    users:
+      create:
+        success: "Welcome to the Sample App!"
+      show:
+        error: "User not found"
+  
+  # Static pages
+  static_pages:
+    home:
+      title: "Welcome to the Sample App"
+    about:
+      title: "About"
+    help:
+      title: "Help"
+  
+  # Users
+  users:
+    index:
+      title: "All users"
+    new:
+      title: "Sign up"
+    show:
+      title: "Profile"
+  
+  # Navigation
+  navigation:
+    home: "Home"
+    help: "Help"
+    users: "Users"
+    about: "About"
+    signup: "Sign up"
+  
+  # Error messages
+  errors:
+    form:
+      explanation: "The form contains %{count} error."
+      explanation_plural: "The form contains %{count} errors."
+  
+  # Common
+  common:
+    all_users: "All users"
+    signup_now: "Sign up now!"

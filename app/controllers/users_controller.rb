@@ -5,6 +5,9 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    flash[:error] = t("flash.users.show.error")
+    redirect_to users_path
   end
   
   def index
@@ -14,15 +17,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = t("flash.users.create.success")
       redirect_to @user
     else
-      render 'new', status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
   
   private
-  
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
