@@ -51,6 +51,12 @@ en:
       create:
         error: "Invalid email/password combination"
       require_login: "Please log in."
+      account_not_activated: "Account not activated. Check your email for the activation link."
+    users:
+      not_activated: "Account not activated. Check your email for the activation link."
+    account_activations:
+      success: "Account activated!"
+      invalid: "Invalid activation link"
   
   # Static pages
   static_pages:
@@ -123,3 +129,10 @@ en:
     all_users: "All users"
     signup_now: "Sign up now!"
     confirm_delete: "Are you sure?"
+
+  # Mailers
+  user_mailer:
+    account_activation:
+      subject: "Account activation"
+    password_reset:
+      subject: "Password reset"
