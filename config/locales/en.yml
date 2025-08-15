@@ -30,16 +30,27 @@
 en:
   hello: "Hello world"
   
+  # Application
+  app:
+    name: "Sample App"
+    base_title: "Ruby on Rails Tutorial Sample App"
+  
   # Flash messages
   flash:
     users:
       create:
         success: "Welcome to the Sample App!"
+      update:
+        success: "Profile updated"
+      destroy:
+        success: "User deleted"
+        error: "You cannot delete yourself!"
       show:
         error: "User not found"
     sessions:
       create:
         error: "Invalid email/password combination"
+      require_login: "Please log in."
   
   # Static pages
   static_pages:
@@ -54,10 +65,15 @@ en:
   users:
     index:
       title: "All users"
+      delete: "delete"
     new:
       title: "Sign up"
     show:
       title: "Profile"
+    edit:
+      title: "Edit user"
+      update_profile: "Update your profile"
+      change_gravatar: "Change"
   
   # Sessions
   sessions:
@@ -74,9 +90,11 @@ en:
     help: "Help"
     users: "Users"
     about: "About"
+    contact: "Contact"
     signup: "Sign up"
     login: "Log in"
     logout: "Log out"
+    settings: "Settings"
   
   # Form labels
   forms:
@@ -91,6 +109,7 @@ en:
   forms:
     buttons:
       create_account: "Create my account"
+      save_changes: "Save changes"
       login: "Log in"
   
   # Error messages
@@ -103,3 +122,4 @@ en:
   common:
     all_users: "All users"
     signup_now: "Sign up now!"
+    confirm_delete: "Are you sure?"

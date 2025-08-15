@@ -8,7 +8,7 @@ class User < ApplicationRecord
     validates :email, uniqueness: true
     before_save { self.email = email.downcase }
     has_secure_password
-    validates :password, length: { minimum: 6 }
+    validates :password, length: { minimum: 6 }, allow_nil: true
 
     def User.new_token
         SecureRandom.urlsafe_base64
@@ -23,6 +23,11 @@ class User < ApplicationRecord
         raw_token = User.new_token
         self.raw_remember_token = raw_token
         update_attribute(:remember_token, User.digest(raw_token))
+        remember_token
+    end
+    
+    def session_token
+        remember_token || remember
     end
     
     def authenticated?(remember_token)
@@ -36,5 +41,9 @@ class User < ApplicationRecord
     def forget
         update_attribute(:remember_token, nil)
         self.raw_remember_token = nil
+    end
+
+    def admin?
+        admin
     end
 end
