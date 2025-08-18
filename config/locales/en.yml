@@ -57,6 +57,13 @@ en:
     account_activations:
       success: "Account activated!"
       invalid: "Invalid activation link"
+    password_resets:
+      email_sent: "Email sent with password reset instructions"
+      email_not_found: "Email address not found"
+      password_reset: "Password has been reset."
+      user_not_found: "User not found"
+      account_not_activated: "Account not activated"
+      invalid_token: "Invalid or expired reset token"
   
   # Static pages
   static_pages:
@@ -89,6 +96,7 @@ en:
       new_user_prompt: "New user?"
       signup_link: "Sign up now!"
       submit: "Log in"
+      forgot_password: "(forgot password)"
   
   # Navigation
   navigation:
@@ -136,3 +144,11 @@ en:
       subject: "Account activation"
     password_reset:
       subject: "Password reset"
+  
+  # Password resets
+  password_resets:
+    new:
+      title: "Forgot password"
+    edit:
+      title: "Reset password"
+      update_password: "Update password"

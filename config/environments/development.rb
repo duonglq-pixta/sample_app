@@ -45,7 +45,7 @@ Rails.application.configure do
   # Set localhost to be used by links generated in mailer templates.
   config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
 
-  # Use file-based delivery for development
+  # in development, the mail is saved in this folder
   config.action_mailer.delivery_method = :file
   config.action_mailer.file_settings = { location: Rails.root.join("tmp/mailers") }
 

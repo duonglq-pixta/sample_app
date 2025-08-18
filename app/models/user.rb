@@ -44,6 +44,10 @@ class User < ApplicationRecord
         self.raw_remember_token = nil
     end
 
+    def password_reset_expired?
+        reset_sent_at < 2.hours.ago
+    end
+
     def admin?
         admin
     end
