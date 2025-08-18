@@ -1,5 +1,6 @@
 class User < ApplicationRecord
     attr_accessor :raw_remember_token, :activation_token, :reset_token
+    has_many :microposts, dependent: :destroy
     
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :name, presence: true, length: { maximum: 50 }
@@ -77,6 +78,10 @@ class User < ApplicationRecord
     def activate
         update_attribute(:activated, true)
         update_attribute(:activated_at, Time.zone.now)
+    end
+
+    def feed
+        Micropost.where("user_id = ?", id)
     end
 
     private
