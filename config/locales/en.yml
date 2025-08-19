@@ -30,13 +30,40 @@
 en:
   hello: "Hello world"
   
+  # Application
+  app:
+    name: "Sample App"
+    base_title: "Ruby on Rails Tutorial Sample App"
+  
   # Flash messages
   flash:
     users:
       create:
         success: "Welcome to the Sample App!"
+      update:
+        success: "Profile updated"
+      destroy:
+        success: "User deleted"
+        error: "You cannot delete yourself!"
       show:
         error: "User not found"
+    sessions:
+      create:
+        error: "Invalid email/password combination"
+      require_login: "Please log in."
+      account_not_activated: "Account not activated. Check your email for the activation link."
+    users:
+      not_activated: "Account not activated. Check your email for the activation link."
+    account_activations:
+      success: "Account activated!"
+      invalid: "Invalid activation link"
+    password_resets:
+      email_sent: "Email sent with password reset instructions"
+      email_not_found: "Email address not found"
+      password_reset: "Password has been reset."
+      user_not_found: "User not found"
+      account_not_activated: "Account not activated"
+      invalid_token: "Invalid or expired reset token"
   
   # Static pages
   static_pages:
@@ -51,10 +78,25 @@ en:
   users:
     index:
       title: "All users"
+      delete: "delete"
     new:
       title: "Sign up"
     show:
       title: "Profile"
+    edit:
+      title: "Edit user"
+      update_profile: "Update your profile"
+      change_gravatar: "Change"
+  
+  # Sessions
+  sessions:
+    new:
+      title: "Log in"
+      remember_me: "Remember me"
+      new_user_prompt: "New user?"
+      signup_link: "Sign up now!"
+      submit: "Log in"
+      forgot_password: "(forgot password)"
   
   # Navigation
   navigation:
@@ -62,7 +104,27 @@ en:
     help: "Help"
     users: "Users"
     about: "About"
+    contact: "Contact"
     signup: "Sign up"
+    login: "Log in"
+    logout: "Log out"
+    settings: "Settings"
+  
+  # Form labels
+  forms:
+    labels:
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Confirmation"
+      remember_me: "Remember me"
+  
+  # Form buttons
+  forms:
+    buttons:
+      create_account: "Create my account"
+      save_changes: "Save changes"
+      login: "Log in"
   
   # Error messages
   errors:
@@ -74,3 +136,19 @@ en:
   common:
     all_users: "All users"
     signup_now: "Sign up now!"
+    confirm_delete: "Are you sure?"
+
+  # Mailers
+  user_mailer:
+    account_activation:
+      subject: "Account activation"
+    password_reset:
+      subject: "Password reset"
+  
+  # Password resets
+  password_resets:
+    new:
+      title: "Forgot password"
+    edit:
+      title: "Reset password"
+      update_password: "Update password"
