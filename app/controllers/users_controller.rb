@@ -3,12 +3,12 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: :destroy
   before_action :activated_user, only: [:index, :show]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :following, :followers]
   def new
     @user = User.new
   end
   
   def show
-    @user = User.find(params[:id])
     redirect_to root_url and return unless @user.activated?
     @microposts = @user.microposts.paginate(page: params[:page])
   rescue ActiveRecord::RecordNotFound
@@ -32,11 +32,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
   
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:success] = t("flash.users.update.success")
       redirect_to @user
@@ -46,7 +44,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
     if @user == current_user
       flash[:danger] = t("flash.users.destroy.error")
       redirect_to users_url
@@ -55,6 +52,18 @@ class UsersController < ApplicationController
       flash[:success] = t("flash.users.destroy.success")
       redirect_to users_url
     end
+  end
+
+  def following
+    @title = "Following"
+    @users = @user.following.paginate(page: params[:page])
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show_follow'
   end
   
   private
@@ -66,7 +75,6 @@ class UsersController < ApplicationController
 
 
   def correct_user
-    @user = User.find(params[:id])
     redirect_to(@user) unless current_user?(@user)
   end
 
@@ -79,5 +87,9 @@ class UsersController < ApplicationController
       flash[:warning] = t("flash.users.not_activated")
       redirect_to root_url
     end
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
