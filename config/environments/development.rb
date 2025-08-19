@@ -15,6 +15,11 @@ Rails.application.configure do
   # Enable server timing.
   config.server_timing = true
 
+  config.action_mailer.raise_delivery_errors = true
+
+  host = "localhost:3000"
+  config.action_mailer.default_url_options = { host: host, protocol: "http" }
+
   # Enable/disable Action Controller caching. By default Action Controller caching is disabled.
   # Run rails dev:cache to toggle Action Controller caching.
   if Rails.root.join("tmp/caching-dev.txt").exist?
@@ -32,13 +37,17 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Make template changes take effect immediately.
   config.action_mailer.perform_caching = false
 
   # Set localhost to be used by links generated in mailer templates.
   config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
+
+  # in development, the mail is saved in this folder
+  config.action_mailer.delivery_method = :file
+  config.action_mailer.file_settings = { location: Rails.root.join("tmp/mailers") }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
